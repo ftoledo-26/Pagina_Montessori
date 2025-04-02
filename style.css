@@ -3,7 +3,7 @@
 }
 /*Comunes*/
 body{
-    background-color: #f0f0f0;
+    background-color: #fafaed;
     margin: 0;
     padding: 0;
     display: flex;
@@ -15,6 +15,7 @@ header{
     color: white;
     padding: 20px;
     text-align: center;
+    
 }
 
 header .logo-container{
@@ -22,16 +23,23 @@ header .logo-container{
     justify-content: center;
     align-items: center;
 }
+header .logo-container a{
+    width: 100%;
+
+}
+
 header .logo-container img{
     width: 15%;
     height: auto;
     margin-right: 10px;
 }
 
-header .logo-container .links-container{
+header .links-container{
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 10px;
+
     
 }
 header .links-container li{
@@ -44,5 +52,48 @@ header .links-container a{
     color: white;
     text-decoration: none;
     font-size: 18px;
-    
+    position: relative;
+    text-align: center;   
+}
+
+header .links-container a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 2.5px;
+    background-color: currentColor;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease 0.2s;
+}
+
+header .links-container a:hover::after {
+    transform: scaleX(1);
+}
+
+
+/*Evento*/
+.eventos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.eventos-container {
+    display: flex;
+    align-items: center;
+}
+
+.eventos-container img {
+    width: 35%;
+    height: auto;
+}
+
+.evento-descripcion {
+    width: 65%;
+    padding: 0 20px;
 }
