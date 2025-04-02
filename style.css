@@ -75,25 +75,74 @@ header .links-container a:hover::after {
 
 
 /*Evento*/
-.eventos{
+/* Contenedor principal */
+.eventos-main {
     display: flex;
     justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    width: 100%;
+    padding: 20px;
+    flex: 1 ;
+}
+
+/* Sección de eventos */
+.eventos {
+    width: 80%;
+    max-width: 1000px;
+    text-align: left;
     margin-top: 20px;
 }
 
+/* Línea divisoria */
+.eventos hr {
+    border: none;
+    height: 2px;
+    background-color: #000;
+    margin: 10px 0;
+}
+
+/* Contenedor de eventos */
 .eventos-container {
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    gap: 40px; /* Espacio entre la imagen y la descripción */
+    flex-wrap: wrap; /* Permite que se ajuste en pantallas pequeñas */
 }
 
-.eventos-container img {
-    width: 35%;
+/* Contenedor de la imagen */
+.evento-imagen {
+    flex: 1;    
+    display: flex;
+    justify-content: center;
+    max-width: 70%;
+}
+
+/* Imagen */
+.evento-imagen img {
+    width: 100%;
+    max-width: 80%;
     height: auto;
+    border-radius: 10px; /* Suaviza las esquinas */
 }
 
+/* Descripción del evento */
 .evento-descripcion {
-    width: 65%;
+    flex: 1;
     padding: 0 20px;
+    font-size: 16px;
+    max-width: 60%;
 }
+
+/* Cando la pantalla es pequeña */
+@media (max-width: 768px) {
+    .eventos-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .evento-imagen,
+    .evento-descripcion {
+        max-width: 100%;
+    }
+}
+
