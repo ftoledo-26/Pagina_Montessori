@@ -263,8 +263,8 @@ footer{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 40px; /* Espacio entre la imagen y la descripción */
-    flex-wrap: wrap; /* Permite que se ajuste en pantallas pequeñas */
+    gap: 40px; 
+    flex-wrap: wrap; 
     margin-bottom: 25px;
 }
 
@@ -281,10 +281,10 @@ footer{
     width: 100%;
     max-width: 80%;
     height: auto;
-    border-radius: 10px; /* Suaviza las esquinas */
+    border-radius: 10px; 
 }
 
-/* Descripción del evento */
+
 .evento-descripcion {
     flex: 1;
     padding: 0 20px;
@@ -292,7 +292,7 @@ footer{
     max-width: 60%;
 }
 
-/* Cando la pantalla es pequeña */
+
 @media (max-width: 768px) {
     .eventos-container {
         flex-direction: column;
@@ -323,15 +323,16 @@ footer{
 }
 
 .montessori-tarjeta {
-    width: 85%;
+    width: 90%;
     height: auto;
     flex: 1;
     margin: 0 auto 10px;
+    padding-top: 10px;
 }
 
 .pregunta {
-    background-color: #cbe4f5;
-    color: white;
+    background-color: #f1f1f1;
+    color: rgb(0, 0, 0);
     padding: 15px;
     cursor: pointer;
     font-size: 18px;
@@ -340,6 +341,7 @@ footer{
     justify-content: space-between;
     align-items: center;
     border-radius: 5px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
 }
 
 .pregunta:hover {
@@ -351,17 +353,15 @@ footer{
     overflow: hidden;
     padding: 0 15px;
     background-color: #f1f1f1;
-    border-left: 5px solid #3498db;
     border-radius: 5px, 5px 5px 5px 0;
     transition: max-height 0.4s ease-in-out, padding 0.4s ease-in-out;
 }
 
 .respuesta.open {
-    max-height: 200px; /* Ajusta esto según el contenido */
+    max-height: 200px; 
     padding: 15px;
 }
 
-/* Icono de expansión */
 .icono {
     font-size: 20px;
     transition: transform 0.4s ease-in-out;

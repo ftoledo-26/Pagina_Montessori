@@ -9,14 +9,14 @@ document.addEventListener("DOMContentLoaded", function() {
         question.addEventListener("click", function() {
             const isOpen = answer.classList.contains("open");
 
-            // Cierra todas las respuestas antes de abrir la actual
+            
             document.querySelectorAll(".respuesta").forEach(ans => {
                 ans.classList.remove("open");
                 ans.previousElementSibling.classList.remove("active");
                 ans.previousElementSibling.querySelector(".icono").textContent = "▼";
             });
 
-            // Abre o cierra la respuesta actual
+            
             if (!isOpen) {
                 answer.classList.add("open");
                 question.classList.add("active");
