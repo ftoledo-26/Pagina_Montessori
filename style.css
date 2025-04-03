@@ -57,10 +57,7 @@ header .links-container a{
     position: relative;
     text-align: center;
 }
-header .links-container a:hover{
-    color: #f0f0f0;
-    transition: color 0.3s ease;
-}
+
 
 
 header .links-container a::after {
@@ -104,15 +101,23 @@ footer{
 
 
 /*Index*/
+/*
+*
+*
+*
+*
+*
+**/
 .Presentacion{
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px;
+    padding-bottom: 20px;
     background-image: url("Imagenes/pie_orig.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    
     width: 100%;
     height: auto;
     color: white;
@@ -120,7 +125,115 @@ footer{
 }
 
 
+
+.container {
+    max-width: 1000px;
+    margin: 10px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+.section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.text {
+    flex: 1;
+    padding: 10px;
+    text-align: justify;
+}
+.image-container {
+    display: flex;
+    flex-direction: column;
+    margin: 50px;
+    gap: 15px;
+}
+.image-container img {
+    width: 90%;
+    height: auto;
+
+    border-radius: 8px;
+}
+.triangular-images {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+.triangular-images img {
+    width: 90%;
+    height: auto;
+    border-radius: 8px;
+}
+.triangular-images img:nth-child(3) {
+    grid-column: span 2;
+    grid-row: span 2;
+    width: 62%;
+    justify-self: center;
+    height: auto;
+}
+@media (max-width: 768px) {
+    .triangular-images {
+        grid-template-columns: 1fr;
+    }
+    .triangular-images img:nth-child(3) {
+        grid-column: span 1;
+        grid-row: span 1;
+        width: 100%;
+    }
+}
+
+.Informacion-container h2{
+    color: #2c3e50;
+    font-size: 24px;
+     font-weight: bold;
+}
+.Informacion-container .Asociacion_link{
+    display: inline-block;
+    background-color: #3498db;
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.Informacion-container hr{
+    margin: 20px 0;
+    border: 1px solid #ccc;
+}
+
+.Colegio_link{
+    display: inline-block;
+    background-color: #e67e22; 
+    color: white; 
+    padding: 10px 15px; 
+    text-decoration: none; 
+    border-radius: 5px; 
+    font-weight: bold;
+}
+.Informacion-container a:hover {
+    background-color: rgba(234, 19, 19, 0.1);
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    color: rgb(234, 19, 19);
+    text-decoration: none;
+    box-shadow: 0 4px 8px rgba(234, 19, 19, 0.2);
+    transform: scale(1.05);
+}
+
 /*Evento*/
+/*
+*
+*ºº
+*
+*
+*
+*
+*/
 /* Contenedor principal */
 .eventos-main {
     display: flex;
@@ -191,4 +304,69 @@ footer{
         max-width: 100%;
     }
 }
+/*
+*
+*
+*
+*
+*
+*/
+/*Montessori*/
+.montessori-container {
+    max-width: 1000px;
+    margin: 20px auto;
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    padding: 5px;
+}
 
+.montessori-tarjeta {
+    width: 85%;
+    height: auto;
+    flex: 1;
+    margin: 0 auto 10px;
+}
+
+.pregunta {
+    background-color: #cbe4f5;
+    color: white;
+    padding: 15px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.9s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.pregunta:hover {
+    background-color: #4CAF50;
+}
+
+.respuesta {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 15px;
+    background-color: #f1f1f1;
+    border-left: 5px solid #3498db;
+    border-radius: 5px, 5px 5px 5px 0;
+    transition: max-height 0.4s ease-in-out, padding 0.4s ease-in-out;
+}
+
+.respuesta.open {
+    max-height: 200px; /* Ajusta esto según el contenido */
+    padding: 15px;
+}
+
+/* Icono de expansión */
+.icono {
+    font-size: 20px;
+    transition: transform 0.4s ease-in-out;
+}
+
+.pregunta.active .icono {
+    transform: rotate(180deg);
+}
