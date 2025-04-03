@@ -1,6 +1,7 @@
 *{
     font-family: Arial, Helvetica, sans-serif;
 }
+
 /*Comunes*/
 body{
     background-color: #fafaed;
@@ -24,12 +25,13 @@ header .logo-container{
     align-items: center;
 }
 header .logo-container a{
-    width: 100%;
+    width: 15%;
+    display: block;
 
 }
 
 header .logo-container img{
-    width: 15%;
+    width: 100%;
     height: auto;
     margin-right: 10px;
 }
@@ -53,8 +55,13 @@ header .links-container a{
     text-decoration: none;
     font-size: 18px;
     position: relative;
-    text-align: center;   
+    text-align: center;
 }
+header .links-container a:hover{
+    color: #f0f0f0;
+    transition: color 0.3s ease;
+}
+
 
 header .links-container a::after {
     content: "";
@@ -72,6 +79,45 @@ header .links-container a::after {
 header .links-container a:hover::after {
     transform: scaleX(1);
 }
+main{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+footer{
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 12px;
+}
+@media (max-width: 768px) {
+    header .logo-container a{
+        width: 20%;
+        transition: width 0.3s ease;
+    }
+    
+    
+}
+
+
+/*Index*/
+.Presentacion{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-image: url("Imagenes/pie_orig.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: auto;
+    color: white;
+    text-align: center;
+}
 
 
 /*Evento*/
@@ -79,7 +125,6 @@ header .links-container a:hover::after {
 .eventos-main {
     display: flex;
     justify-content: center;
-    width: 100%;
     padding: 20px;
     flex: 1 ;
 }
@@ -107,6 +152,7 @@ header .links-container a:hover::after {
     justify-content: space-between;
     gap: 40px; /* Espacio entre la imagen y la descripción */
     flex-wrap: wrap; /* Permite que se ajuste en pantallas pequeñas */
+    margin-bottom: 25px;
 }
 
 /* Contenedor de la imagen */
