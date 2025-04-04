@@ -14,7 +14,6 @@ body{
 header{
     background-color: #4CAF50;
     color: white;
-    padding: 20px;
     text-align: center;
     
 }
@@ -31,6 +30,7 @@ header .logo-container a{
 }
 
 header .logo-container img{
+    margin-top: 15px;
     width: 100%;
     height: auto;
     margin-right: 10px;
@@ -89,6 +89,7 @@ footer{
     color: white;
     text-align: center;
     padding: 12px;
+    margin-top: 10px;
 }
 @media (max-width: 768px) {
     header .logo-container a{
@@ -371,6 +372,50 @@ footer{
     transform: rotate(180deg);
 }
 
+
+
+
+/* Responsividad para .pregunta y .respuesta */
+@media (max-width: 768px) {
+    .pregunta {
+        font-size: 16px; /* Reducir el tamaño de fuente en pantallas pequeñas */
+        padding: 10px; /* Ajustar el padding */
+        flex-direction: column; /* Cambiar a diseño en columna */
+        align-items: flex-start; /* Alinear elementos al inicio */
+    }
+
+    .pregunta .icono {
+        margin-top: 10px; /* Separar el ícono del texto */
+    }
+
+    .respuesta {
+        padding: 0 10px; /* Reducir el padding en pantallas pequeñas */
+    }
+
+    .respuesta.open {
+        max-height: 150px; /* Ajustar la altura máxima */
+        padding: 10px; /* Reducir el padding */
+    }
+}
+
+/* Responsividad para pantallas más grandes */
+@media (min-width: 769px) {
+    .pregunta {
+        font-size: 18px; /* Tamaño de fuente estándar */
+        padding: 15px; /* Padding estándar */
+        flex-direction: row; /* Mantener diseño en fila */
+        align-items: center; /* Centrar elementos */
+    }
+
+    .respuesta {
+        padding: 0 15px; /* Padding estándar */
+    }
+
+    .respuesta.open {
+        max-height: 200px; /* Altura máxima estándar */
+        padding: 15px; /* Padding estándar */
+    }
+}
 /*
 *
 *
@@ -382,3 +427,54 @@ footer{
 *
 */
 /*AMMA*/
+
+/* Contenedor principal */
+.AMMA-container {
+    max-width: 1100px;
+    margin: 40px auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Títulos */
+.AMMA-container h2 {
+    color: #2e8b57;
+    border-left: 5px solid #2e8b57;
+    padding-left: 10px;
+    font-size: 24px;
+}
+
+/* Lista de fines y actividades */
+.AMMA-container ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.AMMA-container ul li {
+    background: url('https://img.icons8.com/ios-filled/15/2e8b57/checkmark.png') no-repeat left center;
+    padding-left: 25px;
+    margin: 8px 0;
+}
+
+/* Estilos para emails */
+.email-container {
+    margin-top: 35px;
+    font-size: 18px;
+}
+
+.email-container a {
+    display: inline-block;
+    background: #2e8b57;
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.email-container a:hover {
+    background: #1d6b45;
+}
+
