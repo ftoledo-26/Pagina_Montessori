@@ -12,6 +12,7 @@ body{
     min-height: 100vh;
 }
 header{
+    padding-top: 10px;
     background-color: #4CAF50;
     color: white;
     text-align: center;
@@ -183,6 +184,7 @@ footer{
         grid-column: span 1;
         grid-row: span 1;
         width: 100%;
+
     }
 }
 
@@ -217,19 +219,19 @@ footer{
 }
 .Informacion-container a:hover {
     background-color: rgba(234, 19, 19, 0.1);
-    padding: 8px 12px;
+    padding: 10px 15px; 
     border-radius: 8px;
-    transition: all 0.3s ease;
+    
     color: rgb(234, 19, 19);
     text-decoration: none;
     box-shadow: 0 4px 8px rgba(234, 19, 19, 0.2);
-    transform: scale(1.05);
+    transition: all 0.4s ease;
 }
 
 /*Evento*/
 /*
 *
-*ºº
+*
 *
 *
 *
@@ -378,42 +380,42 @@ footer{
 /* Responsividad para .pregunta y .respuesta */
 @media (max-width: 768px) {
     .pregunta {
-        font-size: 16px; /* Reducir el tamaño de fuente en pantallas pequeñas */
-        padding: 10px; /* Ajustar el padding */
-        flex-direction: column; /* Cambiar a diseño en columna */
-        align-items: flex-start; /* Alinear elementos al inicio */
+        font-size: 16px; 
+        padding: 10px; 
+        flex-direction: column; 
+        align-items: flex-start; 
     }
 
     .pregunta .icono {
-        margin-top: 10px; /* Separar el ícono del texto */
+        margin-top: 10px;
     }
 
     .respuesta {
-        padding: 0 10px; /* Reducir el padding en pantallas pequeñas */
+        padding: 0 10px;
     }
 
     .respuesta.open {
-        max-height: 150px; /* Ajustar la altura máxima */
-        padding: 10px; /* Reducir el padding */
+        max-height: 150px; 
+        padding: 10px; 
     }
 }
 
 /* Responsividad para pantallas más grandes */
 @media (min-width: 769px) {
     .pregunta {
-        font-size: 18px; /* Tamaño de fuente estándar */
-        padding: 15px; /* Padding estándar */
-        flex-direction: row; /* Mantener diseño en fila */
-        align-items: center; /* Centrar elementos */
+        font-size: 18px;
+        padding: 15px; 
+        flex-direction: row; 
+        align-items: center; 
     }
 
     .respuesta {
-        padding: 0 15px; /* Padding estándar */
+        padding: 0 15px; 
     }
 
     .respuesta.open {
-        max-height: 200px; /* Altura máxima estándar */
-        padding: 15px; /* Padding estándar */
+        max-height: 200px;
+        padding: 15px; 
     }
 }
 /*
@@ -471,10 +473,176 @@ footer{
     text-decoration: none;
     padding: 10px 15px;
     border-radius: 5px;
-    transition: background 0.3s ease;
-}
+    transition: background 1s ease;
+} 
 
 .email-container a:hover {
-    background: #1d6b45;
+    background: #59806d;
 }
 
+/*
+*
+*
+*
+*
+*
+*
+*
+*/
+/*socios*/
+.socio-fieldset{
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto;
+    padding: 20px;
+    border: 4px solid #ccc;
+    border-radius: 10px;
+    background-color: #f6f6e8;  
+    font-size: 23px;
+    font-weight: bold;
+}
+
+.socio-fieldset input {
+    font-size: 23px;
+    width: 60%;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+
+
+
+
+/* Common styles for socio inputs with full width */
+.DNIsocio,
+.nombresocio,
+.apellidosocio,
+.domiciliosocio,
+.cp-loc,
+.localidadsocio,
+.cpsocio,
+.provinciasocio,
+.telfijosocio,
+.telmovilsocio,
+.emailsocio {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+/* DNI-Sexo specific styles (width--90%) */
+.DNI-Sexo {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+    width: 90%;
+}
+
+/* Select inside DNI-Sexo */
+.DNI-Sexo select {
+    width: 60%;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 23px;
+}
+
+.PDF-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    flex-direction: column;
+}
+.PDF-container p {
+    font-size: 34px;
+    margin-right: 10px;
+}
+.PDF-container a {
+    font-size: 34px;
+    text-decoration: none;
+    color: #4CAF50;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #f1f1f1;
+    transition: background-color 0.3s ease;
+}
+
+
+
+
+
+
+
+
+/*
+<fieldset class="socio-fieldset">
+                <legend>Hazte soci@</legend>
+                 <div class="nombresocio">
+                    <p>Nombre</p>
+                    <input type="text" name="nombre" id="nombre" required>
+                </div>
+                <div class="apellidosocio">
+                    <p>Primer Apellido</p>
+                    <input type="text" name="apellido1" id="apellido1" required>
+                </div>
+                <div class="apellidosocio">
+                    <p>Segundo Apellido</p>
+                    <input type="text" name="apellido2" id="apellido2" required>
+                </div class="DNIsocio">
+                <div class="DNI-Sexo">
+                    <div class="DNIsocio">
+                        <p>DNI</p>
+                        <input type="text" name="dni" id="dni" required>
+                    </div>
+                    
+                    <Select class="Sexo">
+                        <option value="Hombre">Hombre</option>
+                        <option value="Mujer">Mujer</option>
+                        <option value="Otro">Otro</option>
+                    </Select>
+                </div>
+
+
+                <div class="domiciliosocio">
+                    <p>Domicilio</p>
+                    <input type="text" name="domicilio" id="domicilio" required>
+                </div>
+                <div class="cp-loc">
+                    <div class="localidadsocio">
+                        <p>Localidad</p>
+                        <input type="text" name="localidad" id="localidad" required>
+                    </div>
+                    <div class="cpsocio">
+                        <p>C.P</p>
+                        <input type="text" name="cp" id="cp" required>
+                    </div>
+                </div>
+                <div class="provinciasocio">
+                    <p>Provincia</p>
+                    <input type="text" name="provincia" id="provincia" required>
+                </div>
+                <div class="telfijosocio">
+                    <p>Tel.Fijo</p>
+                    <input type="text" name="telfijo" id="telfijo">
+                </div>
+                <div class="telmovilsocio">
+                    <p>Tel.Movil</p>
+                    <input type="text" name="telmovil" id="telmovil" required>
+                </div>
+                <div class="emailsocio">
+                    <p>Email</p>
+                    <input type="email" name="email" id="email" required>
+                </div>
+            </fieldset>
+
+*/
