@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style.css">
-    <link rel="icon" href="Imagenes/2024.03.15-Boros-Amma-04.jpg" type="image/x-icon">
+    <link rel="icon" href="../Imagenes/2024.03.15-Boros-Amma-04.jpg" type="image/x-icon">
     <title>Asociacion Monstessori</title>
 </head>
 <body>
@@ -27,42 +27,86 @@
     </header>
 
     <main class="eventos-main"> 
-        <div class="eventos">
-            <h2>Eventos</h2>
-            <hr>
-            <div class="eventos-container">
-                <div class="evento-imagen">
-                    <img src="../Imagenes/2024.03.15-Boros-Amma-04.jpg" alt="Evento">
+        <div class="form-container">
+            <h2>Hazte Soci@ - Asociación Montessori Málaga</h2>
+            <form>
+              <div class="form-group">
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" name="nombre" required>
+              </div>
+        
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="apellido1">Primer Apellido</label>
+                  <input type="text" id="apellido1" name="apellido1" required>
                 </div>
-                <div class="evento-descripcion">
-                    <h3>Nombre del Evento</h3>
-                    <p><strong>Fecha:</strong> dd//mm//yyyy</p>
-                    <p>Lorem ipsum dolor sit amet consectetur</p>
+                <div class="form-group">
+                  <label for="apellido2">Segundo Apellido</label>
+                  <input type="text" id="apellido2" name="apellido2">
                 </div>
-            </div>
-            <hr>
-            <div class="eventos-container">
-                <div class="evento-imagen">
-                    <img src="../Imagenes/2024.03.15-Boros-Amma-04.jpg" alt="Evento">
+              </div>
+        
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="dni">DNI</label>
+                  <input type="text" id="dni" name="dni" required>
                 </div>
-                <div class="evento-descripcion">
-                    <h3>Nombre del Evento</h3>
-                    <p><strong>Fecha:</strong> dd/mm/yyyy</p>
-                    <p>Lorem ipsum dolor sit amet consectetur</p>
+                <div class="form-group">
+                  <label for="genero">Género</label>
+                  <select id="genero" name="genero" required>
+                    <option value="hombre">Hombre</option>
+                    <option value="mujer">Mujer</option>
+                    <option value="otro">Otro</option>
+                    <option value="n/a">Prefiero no decirlo</option>
+                  </select>
                 </div>
-            </div>
-            <hr>
-            <div class="eventos-container">
-                <div class="evento-imagen">
-                    <img src="../Imagenes/2024.03.15-Boros-Amma-04.jpg" alt="Evento">
+              </div>
+        
+              <div class="form-group">
+                <label for="domicilio">Domicilio</label>
+                <input type="text" id="domicilio" name="domicilio" required>
+              </div>
+        
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="localidad">Localidad</label>
+                  <input type="text" id="localidad" name="localidad" required>
                 </div>
-                <div class="evento-descripcion">
-                    <h3>Nombre del Evento</h3>
-                    <p><strong>Fecha:</strong> dd/mm/yyyy</p>
-                    <p>Lorem ipsum dolor sit amet consectetur</p>
+                <div class="form-group">
+                  <label for="cp">Código Postal</label>
+                  <input type="text" id="cp" name="cp" required>
                 </div>
-            </div>
-        </div>
+              </div>
+        
+              <div class="form-group">
+                <label for="provincia">Provincia</label>
+                <input type="text" id="provincia" name="provincia" required>
+              </div>
+        
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="telefono_fijo">Teléfono Fijo</label>
+                  <input type="tel" id="telefono_fijo" name="telefono_fijo">
+                </div>
+                <div class="form-group">
+                  <label for="telefono_movil">Teléfono Móvil</label>
+                  <input type="tel" id="telefono_movil" name="telefono_movil" required>
+                </div>
+              </div>
+        
+              <div class="form-group">
+                <label for="email">Correo Electrónico</label>
+                <input type="email" id="email" name="email" required>
+              </div>
+        
+              <div class="button-row">
+                <button class="btn" type="submit">Enviar Solicitud</button>
+                <button class="btn" type="button">Descargar PDF</button>
+              </div>
+        
+              <p class="footer-text">En caso de algún problema o preferencia, también puedes rellenar el PDF y enviarlo al correo proporcionado.</p>
+            </form>
+          </div>
     </main>
 
     <footer>

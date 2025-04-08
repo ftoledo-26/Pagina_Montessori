@@ -490,89 +490,94 @@ footer{
 *
 */
 /*socios*/
-.socio-fieldset{
-    width: 55%;
+body {
+    background: #fdfdf4;
+    margin: 0;
+    padding: 0;
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
-    margin: 20px auto;
-    padding: 20px;
-    border: 4px solid #ccc;
-    border-radius: 10px;
-    background-color: #f6f6e8;  
-    font-size: 23px;
-    font-weight: bold;
-}
+    align-items: flex-start;
+    padding: 2rem;
+  }
 
-.socio-fieldset input {
-    font-size: 23px;
-    width: 60%;
-    padding: 5px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-}
-
-
-
-
-
-/* Common styles for socio inputs with full width */
-.DNIsocio,
-.nombresocio,
-.apellidosocio,
-.domiciliosocio,
-.cp-loc,
-.localidadsocio,
-.cpsocio,
-.provinciasocio,
-.telfijosocio,
-.telmovilsocio,
-.emailsocio {
-    display: inline-flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 10px;
+  .form-container {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     width: 100%;
-}
+    max-width: 700px;
+  }
 
-/* DNI-Sexo specific styles (width--90%) */
-.DNI-Sexo {
-    display: inline-flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 10px;
-    width: 90%;
-}
-
-/* Select inside DNI-Sexo */
-.DNI-Sexo select {
-    width: 60%;
-    padding: 5px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    font-size: 23px;
-}
-
-.PDF-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
-    flex-direction: column;
-}
-.PDF-container p {
-    font-size: 34px;
-    margin-right: 10px;
-}
-.PDF-container a {
-    font-size: 34px;
-    text-decoration: none;
+  h2 {
+    text-align: center;
     color: #4CAF50;
-    padding: 10px 20px;
-    border-radius: 5px;
-    background-color: #f1f1f1;
-    transition: background-color 0.3s ease;
-}
+    margin-bottom: 1.5rem;
+  }
+
+  .form-group {
+    margin-bottom: 1rem;
+  }
+
+  label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.3rem;
+  }
+
+  input, select {
+    width: 100%;
+    padding: 0.6rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+  }
+
+  .form-row {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .form-row .form-group {
+    flex: 1;
+    min-width: 45%;
+  }
+
+  .button-row {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 2rem;
+  }
+
+  .btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s ease;
+  }
+
+  .btn:hover {
+    background-color: #3a9f46;
+  }
+
+  .footer-text {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: #666;
+  }
+
+  @media (max-width: 600px) {
+    .form-row {
+      flex-direction: column;
+    }
+
+    .form-row .form-group {
+      min-width: 100%;
+    }
+  }
