@@ -10,7 +10,7 @@
 <body>
     <header>
         <div class ="logo-container">
-            <a href="../index.html"><img src="../Imagenes/ama-simbolo-mini_1.png" alt="Logo Montesori" class="logo"></a>
+            <a href="../index.html"><img src="../Imagenes/2024.03.15-Boros-Amma-04.jpg" alt="Logo Montesori" class="logo"></a>
         </div>
         <div class="links-container">
             <nav>
@@ -27,89 +27,162 @@
     </header>
 
     <main>
-            <fieldset class="socio-fieldset">
-                <legend>Hazte soci@</legend>
-                <div class="nombresocio">
-                    <p>Nombre</p>
-                    <input type="text" name="nombre" id="nombre" required>
+        <div class="socio-container">
+            <form id="form-container" class="form-container">
+              <h2>Hoja de Inscripción</h2>
+              
+              <div class="form-group">
+                <label>Nombre (*)</label>
+                <input type="text" id="nombre" required>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label>Apellido 1 (*)</label>
+                  <input type="text" id="apellido1" required>
                 </div>
-                <div class="apellidosocio">
-                    <p>Primer Apellido</p>
-                    <input type="text" name="apellido1" id="apellido1" required>
+                <div class="form-group">
+                  <label>Apellido 2 (*)</label>
+                  <input type="text" id="apellido2" required>
                 </div>
-                <div class="apellidosocio">
-                    <p>Segundo Apellido</p>
-                    <input type="text" name="apellido2" id="apellido2" required>
-                </div >
-                <div class="DNI-Sexo">
-                    <div class="DNIsocio">
-                        <p>DNI</p>
-                        <input type="text" name="dni" id="dni" required>
-                    </div>
-                    
-                    <Select class="Sexo">
-                        <option value="Hombre">Hombre</option>
-                        <option value="Mujer">Mujer</option>
-                        <option value="Otro">Otro</option>
-                    </Select>
+              </div>
+          
+              
+          
+              <div class="form-row">
+                <div class="form-group">
+                  <label>DNI (*)</label>
+                  <input type="text" id="dni" required>
                 </div>
-                
+                <div class="form-group">
+                  <label>Sexo (*)</label>
+                  <input type="text" id="genero" required>
+                </div>
+                <div class="form-group">
+                  <label>Fecha de nacimiento</label>
+                  <input type="date">
+                </div>
+              </div>
+          
+              <div class="form-group">
+                <label>Domicilio (*)</label>
+                <input type="text" id="domicilio" required>
+              </div>
+          
+              <div class="form-row">
+                <div class="form-group">
+                  <label>Localidad (*)</label>
+                  <input type="text" id="localidad" required>
+                </div>
+                <div class="form-group">
+                  <label>Código Postal</label>
+                  <input type="text" id="cp" required>
+                </div>
+                <div class="form-group">
+                  <label>Provincia</label>
+                  <input type="text" id="provincia" required>
+                </div>
+              </div>
+          
+              <div class="form-row">
+                <div class="form-group">
+                  <label>Teléfono fijo</label>
+                  <input type="tel" id="telefono_fijo"> 
+                </div>
+                <div class="form-group">
+                  <label>Teléfono móvil (*)</label>
+                  <input type="tel" id="telefono_movil" required>
+                </div>
+              </div>
+          
+              <div class="form-group">
+                <label>Email (*)</label>
+                <input type="email" id="email" required>
+              </div>
+          
+              <hr>
+          
+              <div class="form-group">
+                <label>Ocupación laboral</label>
+                <input type="text" id="ocupacion" required>
+              </div>
+          
+              <div class="form-group">
+                <label>Estudios / conocimientos</label>
+                <input type="text" id="estudios" required>
+              </div>
+          
+              <div class="form-group">
+                <label>Aficiones / hobbies</label>
+                <input type="text" id="hobbies" required>
+              </div>
+          
+              <div class="form-group">
+                <label>Soy manitas en</label>
+                <input type="text" id="manitas" required>
+              </div>
+          
+              <div class="form-group">
+                <label>Disponibilidad horaria(Laborables)</label>
+                <select id="disponibilidad_laboral" required>
+                  <option>Mañana</option>
+                  <option>Tarde</option>
+                  <option>Noche</option>
+                </select>
+              </div>
+              
+              <div class="form-group">
+                <label>Disponibilidad horaria (Fines de semana)</label>
+                <select id="disponibilidad_finde" required>
+                  <option>Mañana</option>
+                  <option>Tarde</option>
+                  <option>Noche</option>
+                </select>
+              </div>
+      
+              <!-- Consentimiento y botón -->
+              <div class="legal">
+                <hr>
+                <h3>Cuota socio anual: 20€</h3>
+                <p>(Renovación anual con fecha a 1 de marzo)</p>
+                <div class="form-group">
+                  <label>Método de pago</label>
+                  <select required id="metodo_pago">
+                    <option value="efectivo">Efectivo</option>
+                    <option value="transferencia">Transferencia</option>
+                  </select>
+                </div>
+                <p style="font-size: 22px;">En caso de solicitar la transferencia devera mandarla a la siguiente direccion</p>
+                <div class="transferencia-container">
+                  <div class="arquia-banca">
+                    <h3>Arquia Banca</h3>
+                    <p><strong>Dirección:</strong> Pso. Palmeras del Limonar S/N, 29016 Málaga</p>
+                    <p><strong>IBAN:</strong> ES28 3183 2900 5500 0116 0110</p>
+                  </div>
+                </div>                
+              </div>
+              <div class="button-row">
+                <button class="btn" id="boton" type="submit">Enviar</button>
+                <a id="descarga" href="../Imagenes/HOJA-INSCRIPCION-AMMA-.pdf" download="HOJA-INSCRIPCION-AMMA-">Descargar PDF</a>
+              </div>
+              <!-- Enlace oculto -->
+              <a id="btn" style="display:none;"></a>
 
-
-                <div class="domiciliosocio">
-                    <p>Domicilio</p>
-                    <input type="text" name="domicilio" id="domicilio" required>
-                </div>
-
-                <div class="cp-loc">
-                    <div class="localidadsocio">
-                        <p>Localidad</p>
-                        <input type="text" name="localidad" id="localidad" required>
-                    </div>
-                    <div class="cpsocio">
-                        <p>C.P</p>
-                        <input type="text" name="cp" id="cp" required>
-                    </div>
-                </div>
-
-                
-                <div class="provinciasocio">
-                    <p>Provincia</p>
-                    <input type="text" name="provincia" id="provincia" required>
-                </div>
-                <div class="telfijosocio">
-                    <p>Tel.Fijo</p>
-                    <input type="text" name="telfijo" id="telfijo">
-                </div>
-                <div class="telmovilsocio">
-                    <p>Tel.Movil</p>
-                    <input type="text" name="telmovil" id="telmovil" required>
-                </div>
-                <div class="emailsocio">
-                    <p>Email</p>
-                    <input type="email" name="email" id="email" required>
-                </div>
-
-            </fieldset>
-
-            <div class="PDF-container">
-                <p>En caso de algun problema o preferencia se le 
-                    aportara aqui debajo el pdf a rellenar y el correo al que debera mandar la solicitud
-                    <a href="mailto:info@asociacionmontessori-malaga.org"></a>
+              
+              <div class="legal">
+                <p>En caso de que ocurra algun problema en la seleccion o preferencia personal siempre podra mandar la
+                  solucitud rellenando el PDF y mandandolo a la siguiente direccion de correo: <a href="mailto:info@asociacionmontessori-malaga.org:"> CORREO</a>
                 </p>
-                <div class="PDF">
-                        <a href="https://asociacionmontessori-malaga.org/wp-content/uploads/2024/05/HOJA-INSCRIPCION-AMMA-.pdf">
-                                            HOJA DE INSCRIPCIÓN</a>
-                        <a href="https://asociacionmontessori-malaga.org/wp-content/uploads/2024/05/HOJA-INSCRIPCION-AMMA-.pdf" download="HOJA-INSCRIPCION-AMMA-.pdf" class="download-link">
-                                            DESCARGAR PDF
-                        </a>
-                </div>
                 
-            </div>
-    </main>
-
-    <footer>
-        <p>&copy; Derechos reservados asociacion montesori</p>
-    </footer>
-</body>
-</html>
+              </div>
+            </form>
+          </div>
+        </main>
+      
+        <footer>
+          <p>&copy; Derechos reservados Asociación Montessori</p>
+        </footer>
+      
+        <script src="../Javascript/js.js"></script>
+        
+      </body>
+      </html>

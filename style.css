@@ -13,8 +13,8 @@ body{
 }
 header{
     padding-top: 10px;
-    background-color: #4CAF50;
-    color: white;
+    background:radial-gradient(circle at 50% 0%, #46a6f4, #0056a1);
+    color: silver;
     text-align: center;
     
 }
@@ -42,7 +42,6 @@ header .links-container{
     justify-content: center;
     align-items: center;
     margin-top: 10px;
-
     
 }
 header .links-container li{
@@ -54,7 +53,8 @@ header .links-container li{
 header .links-container a{
     color: white;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 24px;
+    font-weight: bold;
     position: relative;
     text-align: center;
 }
@@ -86,15 +86,28 @@ main{
 }
 
 footer{
-    background-color: #4CAF50;
+    background-color: #0173d3;
     color: white;
     text-align: center;
     padding: 12px;
     margin-top: 10px;
 }
 @media (max-width: 768px) {
+
+    header .logo-container{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header .links-container a{
+        font-size: 18px;
+        font-weight: normal;
+        text-decoration: none;
+        margin: -4px;
+        
+    }
     header .logo-container a{
-        width: 20%;
+        width: 45%;
         transition: width 0.3s ease;
     }
     
@@ -432,7 +445,8 @@ footer{
 
 /* Contenedor principal */
 .AMMA-container {
-    max-width: 1100px;
+    max-width: 100%;
+    height: auto;
     margin: 40px auto;
     background: #fff;
     padding: 30px;
@@ -490,94 +504,242 @@ footer{
 *
 */
 /*socios*/
-body {
-    background: #fdfdf4;
-    margin: 0;
-    padding: 0;
+
+.socio-container {
     display: flex;
     justify-content: center;
-    align-items: flex-start;
-    padding: 2rem;
-  }
+    align-items: center;
+    border-radius: 10px;
+    width: 55%;
+    background-color: #ffffff;
+}
 
-  .form-container {
-    background: white;
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    width: 100%;
-    max-width: 700px;
-  }
+.form-container {
+    background-color: #fbfbfb;
+    padding: 2.5rem;
+    margin: 2rem auto;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    width: 95%;
+    max-width: 800px;
+    animation: fadeIn 0.5s ease-in-out;
+}
 
-  h2 {
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.form-container h2 {
     text-align: center;
-    color: #4CAF50;
-    margin-bottom: 1.5rem;
-  }
+    color: #2e7d32;
+    margin-bottom: 2rem;
+    font-size: 2.2rem;
+    font-weight: 600;
+}
 
-  .form-group {
-    margin-bottom: 1rem;
-  }
+.form-group {
+    margin-bottom: 1.2rem;
+}
 
-  label {
+.form-container label {
     display: block;
-    font-weight: bold;
-    margin-bottom: 0.3rem;
-  }
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+    color: #374151;
+}
 
-  input, select {
-    width: 100%;
-    padding: 0.6rem;
-    border: 1px solid #ccc;
-    border-radius: 8px;
+.form-container input, select {
+    width: 91%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
     font-size: 1rem;
-  }
+    transition: border-color 0.2s;
+    background-color: #f9fafb;
+}
 
-  .form-row {
+.form-container input:focus, .form-container select:focus {
+    border-color: #4CAF50;
+    outline: none;
+    background-color: #fff;
+}
+
+.form-row {
     display: flex;
-    gap: 1rem;
+    gap: 1.5rem;
     flex-wrap: wrap;
-  }
+}
 
-  .form-row .form-group {
+.form-row .form-group {
     flex: 1;
-    min-width: 45%;
-  }
+    min-width: 200px;
+}
 
-  .button-row {
+hr {
+    border: none;
+    border-top: 1px solid #e5e7eb;
+    margin: 2rem 0;
+}
+
+.legal {
+    font-size: 0.95rem;
+    color: #444;
+    line-height: 1.5;
+}
+
+.legal a {
+    color: #2e7d32;
+    text-decoration: underline;
+}
+
+.button-row {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     margin-top: 2rem;
-  }
+}
 
-  .btn {
+.btn {
     background-color: #4CAF50;
     color: white;
-    padding: 0.8rem 1.5rem;
+    padding: 0.85rem 2rem;
     border: none;
-    border-radius: 8px;
+    border-radius: 10px;
     cursor: pointer;
     font-size: 1rem;
-    transition: background 0.3s ease;
-  }
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s;
+}
 
-  .btn:hover {
-    background-color: #3a9f46;
-  }
-
-  .footer-text {
+.btn:hover, #descarga:hover {
+    background-color: #388e3c;
+    transform: translateY(-2px);
+}
+.form-container #descarga{
+    color: #ffffff;
+    background-color: #4CAF50;
+    padding: 0.85rem 2rem;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s;
+    margin-left: 12%;
+}
+.arquia-banca {
+    border: solid 1px #4CAF50;
+    background-color: #ffffff;
+    padding: 0.85rem 2rem;
+    width: 50%;
+    border-radius: 10px;
     text-align: center;
+    font-size: 1rem;
+    font-weight: bold;
+
+}
+.transferencia-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-top: 1rem;
-    font-size: 0.9rem;
-    color: #666;
-  }
-
-  @media (max-width: 600px) {
+}
+@media (max-width: 600px) {
     .form-row {
-      flex-direction: column;
+        flex-direction: column;
     }
-
     .form-row .form-group {
-      min-width: 100%;
+        min-width: 100%;
     }
-  }
+}
+
+/*
+*
+*
+*
+*
+*
+*
+*
+*/
+/*Quienes somos*/
+.Quienes-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    flex: 1;
+    background: linear-gradient(135deg, #f0f0f0, #ffffff);
+}
+
+/* Sección de Personas destacados */
+.Personas {
+    width: 100%;
+    max-width: 1000px;
+    text-align: left;
+    margin-top: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* Línea divisoria */
+.Personas hr {
+    border: none;
+    height: 2px;
+    background-color: #4CAF50;
+    margin: 20px 0;
+}
+
+/* Contenedor de perfiles */
+.personas-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+    padding: 20px;
+    margin: 15px;
+}
+
+/* Contenedor de la imagen */
+.personas-imagen {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    max-width: 100%;
+    transition: transform 0.3s ease;
+}
+.personas-imagen:hover {
+    transform: scale(1.05);
+}
+
+/* Imagen */
+.personas-imagen img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Descripción de la persona */
+.personas-descripcion {
+    flex: 1;
+    padding: 0 20px;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .personas-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .personas-imagen,
+    .personas-descripcion {
+        max-width: 100%;
+    }
+}
