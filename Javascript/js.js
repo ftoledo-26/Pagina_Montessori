@@ -31,9 +31,9 @@ const boton = document.getElementById('boton');
 const enlaceInvisible = document.getElementById('btn');
 
 function HandleSendEmail(event) {
-  event.preventDefault(); // Prevenir envío por defecto
+  event.preventDefault();
 
-  // Obtener los valores de los campos
+
   const inputName = document.getElementById('nombre').value;
   const inputApellido1 = document.getElementById('apellido1').value;
   const inputApellido2 = document.getElementById('apellido2').value;
@@ -54,7 +54,6 @@ function HandleSendEmail(event) {
   const inputDisponibilidadFinde = document.getElementById('disponibilidad_finde').value;
   const inputMetodopago = document.getElementById('metodo_pago').value;
 
-  // Inicializa messageBody al principio de la función
   let messageBody = `
     Nombre: ${inputName}
     Apellido 1: ${inputApellido1}
@@ -77,13 +76,10 @@ function HandleSendEmail(event) {
     Método de pago: ${inputMetodopago}
   `;
 
-  // Ahora que messageBody está definida, puedes usarla para construir el enlace mailto
   enlaceInvisible.setAttribute(
     'href',
     'mailto:franciscomanueltoledo@gmail.com?subject=Formulario de Inscripción&body=' + encodeURIComponent(messageBody)
   );
-
-  // Simula el clic para enviar el correo
   enlaceInvisible.click();
 }
 
