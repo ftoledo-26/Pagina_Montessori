@@ -76,9 +76,31 @@ function HandleSendEmail(event) {
     Método de pago: ${inputMetodopago}
   `;
 
+  const requiredFields = [
+    { value: inputName, name: "Nombre" },
+    { value: inputApellido1, name: "Apellido 1" },
+    { value: inputDNI, name: "DNI" },
+    { value: inputEmail, name: "Email" },
+    { value: inputLocalidad, name: "Localidad" },
+    { value inputGenero, name: "Género" },
+    { value: inputOcupacion, name: "Ocupación" },
+    { value: inputEstudios, name: "Estudios" },
+    { value: inputHobbies, name: "Hobbies" },
+    { value: inputManitas, name: "Manitas" },
+    { value: inputDisponibilidadLaboral, name: "Disponibilidad laboral" },
+    { value: inputDisponibilidadFinde, name: "Disponibilidad fines de semana" },
+    { value: inputMetodopago, name: "Método de pago" }
+  ];
+
+  for (let i = 0; i < requiredFields.length; i++) {
+    if (!requiredFields[i].value.trim()) {
+      alert(`El campo ${requiredFields[i].name} es requerido.`);
+      return;
+    }
+  }
   enlaceInvisible.setAttribute(
     'href',
-    'mailto:franciscomanueltoledo@gmail.com?subject=Formulario de Inscripción&body=' + encodeURIComponent(messageBody)
+    'mailto:info@asociacionmontessori-malaga.org?subject=Formulario de Inscripción&body=' + encodeURIComponent(messageBody)
   );
   enlaceInvisible.click();
 }
