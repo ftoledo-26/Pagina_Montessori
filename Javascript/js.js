@@ -82,7 +82,7 @@ function HandleSendEmail(event) {
     { value: inputDNI, name: "DNI" },
     { value: inputEmail, name: "Email" },
     { value: inputLocalidad, name: "Localidad" },
-    { value inputGenero, name: "Género" },
+    { value: inputGenero, name: "Género" },
     { value: inputOcupacion, name: "Ocupación" },
     { value: inputEstudios, name: "Estudios" },
     { value: inputHobbies, name: "Hobbies" },
