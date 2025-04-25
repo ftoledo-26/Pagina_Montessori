@@ -106,3 +106,51 @@ function HandleSendEmail(event) {
 }
 
 boton.addEventListener('click', HandleSendEmail);
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  const selectElement = document.getElementById('episodioPodcast');
+  console.log(selectElement);  // Log to check if it's selected correctly
+
+  if (!selectElement) {
+      console.error("No se encontró el select con ID 'episodioPodcast'.");
+      return;
+  }
+
+  const video_container = document.querySelector('.video-container');
+  if (!video_container) {
+      console.error("No se encontró el contenedor de video.");
+      return;
+  }
+
+  const podcastURL = new Map([
+      ['Otra educación es posible', 'g2XTpCa9qlw'],
+      ['episodio2', 'AQUI_OTRO_ID']
+  ]);
+
+  // Populating the select dropdown
+  for (const [key] of podcastURL) {
+      const option = document.createElement('option');
+      option.value = key;
+      option.textContent = key;
+      selectElement.appendChild(option);
+  }
+
+  // Function to load the selected podcast
+  function CargarPodcast() {
+      const selectedValue = selectElement.value;
+      console.log("Selected Value: ", selectedValue);  // Log to see the selected option
+      const videoID = podcastURL.get(selectedValue);
+      console.log("Video ID: ", videoID);  // Log to verify the video ID
+      video_container.innerHTML = `
+          <iframe 
+              src="https://www.youtube.com/embed/${videoID}"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen>
+          </iframe>`;
+  }
+
+  selectElement.addEventListener('change', CargarPodcast);
+  CargarPodcast();
+});
