@@ -1,39 +1,37 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const faqItems = document.querySelectorAll(".montessori-tarjeta");
+document.addEventListener("DOMContentLoaded", function () {
+  const faqItems = document.querySelectorAll(".montessori-tarjeta");
 
-    faqItems.forEach(item => {
-        const question = item.querySelector(".pregunta");
-        const answer = item.querySelector(".respuesta");
-        const icon = item.querySelector(".icono");
+  faqItems.forEach(item => {
+    const question = item.querySelector(".pregunta");
+    const answer = item.querySelector(".respuesta");
+    const icon = item.querySelector(".icono");
 
-        question.addEventListener("click", function() {
-            const isOpen = answer.classList.contains("open");
+    question.addEventListener("click", function () {
+      const isOpen = answer.classList.contains("open");
 
-            
-            document.querySelectorAll(".respuesta").forEach(ans => {
-                ans.classList.remove("open");
-                ans.previousElementSibling.classList.remove("active");
-                ans.previousElementSibling.querySelector(".icono").textContent = "▼";
-            });
+      // Cerrar todas las respuestas
+      document.querySelectorAll(".respuesta").forEach(ans => {
+        ans.classList.remove("open");
+        ans.previousElementSibling.classList.remove("active");
+        ans.previousElementSibling.querySelector(".icono").textContent = "▼";
+      });
 
-            
-            if (!isOpen) {
-                answer.classList.add("open");
-                question.classList.add("active");
-                
-            }
-        });
+      // Abrir la respuesta correspondiente
+      if (!isOpen) {
+        answer.classList.add("open");
+        question.classList.add("active");
+      }
     });
+  });
 });
 
 const form = document.getElementById('form-container');
 const boton = document.getElementById('boton');
-const enlaceInvisible = document.getElementById('btn');
 
 function HandleSendEmail(event) {
   event.preventDefault();
 
-
+  // Recoger los valores de los campos
   const inputName = document.getElementById('nombre').value;
   const inputApellido1 = document.getElementById('apellido1').value;
   const inputApellido2 = document.getElementById('apellido2').value;
@@ -76,6 +74,7 @@ function HandleSendEmail(event) {
     Método de pago: ${inputMetodopago}
   `;
 
+  // Validación de campos obligatorios
   const requiredFields = [
     { value: inputName, name: "Nombre" },
     { value: inputApellido1, name: "Apellido 1" },
@@ -98,59 +97,32 @@ function HandleSendEmail(event) {
       return;
     }
   }
-  enlaceInvisible.setAttribute(
-    'href',
-    'mailto:info@asociacionmontessori-malaga.org?subject=Formulario de Inscripción&body=' + encodeURIComponent(messageBody)
-  );
-  enlaceInvisible.click();
+
+  // Enviar el mensaje al backend
+  fetch('http://localhost:3000/contacto', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      message: messageBody  // Enviar el mensaje al backend
+    })
+  })
+  .then(response => response.json())
+  .then(data => {
+    if (data.status === 'ok') {
+      alert('Mensaje enviado con éxito');
+    } else {
+      alert('Hubo un error al enviar el mensaje');
+    }
+  })
+  .catch((error) => {
+    // Si hay un error
+    console.error('Error:', error);
+    console.log('Error al enviar el mensaje:', error);
+    alert('No se pudo enviar el mensaje');
+  });
 }
 
 boton.addEventListener('click', HandleSendEmail);
-
-
-document.addEventListener("DOMContentLoaded", function () {
-  const selectElement = document.getElementById('episodioPodcast');
-  console.log(selectElement);  // Log to check if it's selected correctly
-
-  if (!selectElement) {
-      console.error("No se encontró el select con ID 'episodioPodcast'.");
-      return;
-  }
-
-  const video_container = document.querySelector('.video-container');
-  if (!video_container) {
-      console.error("No se encontró el contenedor de video.");
-      return;
-  }
-
-  const podcastURL = new Map([
-      ['Otra educación es posible', 'g2XTpCa9qlw'],
-      ['episodio2', 'AQUI_OTRO_ID']
-  ]);
-
-  // Populating the select dropdown
-  for (const [key] of podcastURL) {
-      const option = document.createElement('option');
-      option.value = key;
-      option.textContent = key;
-      selectElement.appendChild(option);
-  }
-
-  // Function to load the selected podcast
-  function CargarPodcast() {
-      const selectedValue = selectElement.value;
-      console.log("Selected Value: ", selectedValue);  // Log to see the selected option
-      const videoID = podcastURL.get(selectedValue);
-      console.log("Video ID: ", videoID);  // Log to verify the video ID
-      video_container.innerHTML = `
-          <iframe 
-              src="https://www.youtube.com/embed/${videoID}"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen>
-          </iframe>`;
-  }
-
-  selectElement.addEventListener('change', CargarPodcast);
-  CargarPodcast();
-});
+form.addEventListener('submit', HandleSendEmail);
