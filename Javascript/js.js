@@ -105,7 +105,8 @@ function HandleSendEmail(event) {
       'Content-Type': 'application/json'
     },
     body: JSON.stringify({
-      message: messageBody  // Enviar el mensaje al backend
+      message: messageBody,// Enviar el mensaje al backend
+      //emailUser: inputEmail
     })
   })
   .then(response => response.json())
@@ -113,7 +114,8 @@ function HandleSendEmail(event) {
     if (data.status === 'ok') {
       alert('Mensaje enviado con éxito');
     } else {
-      alert('Hubo un error al enviar el mensaje');
+      alert('no se pudo enviar el mensaje');
+      console.error('Error:', data.mensaje);
     }
   })
   .catch((error) => {
@@ -122,6 +124,17 @@ function HandleSendEmail(event) {
     console.log('Error al enviar el mensaje:', error);
     alert('No se pudo enviar el mensaje');
   });
+
+  boton.disabled = true;
+  boton.innerHTML = 'Enviando...';
+  boton.style.backgroundColor = '#ccc'; // Cambia el color del botón a gris
+  boton.style.cursor = 'not-allowed'; // Cambia el cursor a no permitido
+  setTimeout(() => {
+    boton.disabled = false;
+    boton.innerHTML = 'Enviar';
+    boton.style.backgroundColor = ''; // Restaura el color original del botón
+    boton.style.cursor = 'pointer'; // Restaura el cursor original
+  }, 2000);
 }
 
 boton.addEventListener('click', HandleSendEmail);
