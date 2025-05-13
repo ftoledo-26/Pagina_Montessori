@@ -104,7 +104,7 @@ function HandleSendEmail(event) {
     headers: {
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify({
+    body: JSON.stringify ({ 
       message: messageBody,// Enviar el mensaje al backend
       //emailUser: inputEmail
     })

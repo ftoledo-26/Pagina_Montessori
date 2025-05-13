@@ -1,9 +1,9 @@
-const express = require('express');
+const express = require('express'); 
 const nodemailer = require('nodemailer');
-const dotenv = require('dotenv');
-const cors = require('cors');
-const bodyParser = require('body-parser');
-const rateLimit = require('express-rate-limit');
+const dotenv = require('dotenv'); 
+const cors = require('cors'); 
+const bodyParser = require('body-parser');  
+const rateLimit = require('express-rate-limit'); 
 
 // Configuración del entorno (para cargar las variables de entorno)
 dotenv.config();
@@ -42,6 +42,7 @@ app.post('/contacto', async (req, res) => {
   });
 
   // Opciones del correo
+  
   const mailOptions = {
     from: process.env.EMAIL_FROM,   
     to: process.env.EMAIL_TO,       // Destinatario, puede ser tu email
