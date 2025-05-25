@@ -104,10 +104,12 @@ footer{
     }
 
     header .links-container a{
-        font-size: 18px;
+        font-size: 12px;
         font-weight: normal;
         text-decoration: none;
         margin: -4px;
+        display: grid;
+        grid-template-columns: (3, 1fr); 
         
     }
     header .logo-container a{
