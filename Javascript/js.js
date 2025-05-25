@@ -1,12 +1,19 @@
-const button =document.getElementById("acceptCookies");
-const setting = document.querySelector(".setting");
-const overlay = document.getElementById("cookieOverlay");
+document.addEventListener("DOMContentLoaded", function () {
+    const button =document.getElementById("acceptCookies");
+    const setting = document.querySelector(".setting");
+    const overlay = document.getElementById("cookieOverlay");
 
-            
-[button, setting].forEach(el => {
-    el.addEventListener("click", function(e) {
-        e.preventDefault();
-        overlay.style.display = "none";
+                
+    [button, setting].forEach(el => {
+        if (el) {
+            el.addEventListener("click", function(e) {
+                e.preventDefault();
+                if (overlay) {
+                    overlay.style.display = "none";
+                    
+                }
+            });
+        }
     });
 });
 

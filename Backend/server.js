@@ -6,18 +6,10 @@ const bodyParser = require('body-parser');
 const rateLimit = require('express-rate-limit'); 
 const cookie = require('cookie-parser');
 
+import { cookiesMiddleware } from './cookies/cookiesMiddleware.js'
 
 
-const cookiesMiddleware = require('./cookies/cookiesMiddleware');
-
-
-
-
-
-
-
-
-
+cookiesMiddleware.use(express.json());
 
 // Configuración del entorno (para cargar las variables de entorno)
 dotenv.config();
@@ -40,18 +32,17 @@ app.use('/contacto', Limit);
 
 // Ruta para manejar la solicitud de contactox
 app.post('/contacto', async (req, res) => {
-  const { message  } = req.body;  // Recibimos el mensaje enviado por el frontend
-  // Comprobamos que el mensaje esté presente
+  const { message  } = req.body;
   if (!message || message.trim() === '') {
     return res.status(400).json({ status: 'error', mensaje: 'El mensaje no puede estar vacío.' });
   }
 
-  // Configuración del servicio de correo (Nodemailer)
+  // Configuración del servicio de correo (Nodemailer) usando gmail y el archivo.env
   const transporter = nodemailer.createTransport({
-    service: 'gmail',  // Si usas Gmail, si no pon el que usas
+    service: 'gmail',  
     auth: {
-      user: process.env.EMAIL_FROM,  // Debes tener esta variable en tu archivo .env
-      pass: process.env.EMAIL_PASS   // También esta
+      user: process.env.EMAIL_FROM,  
+      pass: process.env.EMAIL_PASS   
     }
   });
 
@@ -59,9 +50,9 @@ app.post('/contacto', async (req, res) => {
   
   const mailOptions = {
     from: process.env.EMAIL_FROM,   
-    to: process.env.EMAIL_TO,       // Destinatario, puede ser tu email
+    to: process.env.EMAIL_TO,      
     subject: 'Nuevo mensaje de contacto',
-    text: message                    // El mensaje enviado desde el frontend
+    text: message                    
   };
 
   // Intentamos enviar el correo
