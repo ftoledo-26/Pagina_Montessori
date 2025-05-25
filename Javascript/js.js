@@ -1,10 +1,23 @@
+const button =document.getElementById("acceptCookies");
+const setting = document.querySelector(".setting");
+const overlay = document.getElementById("cookieOverlay");
+
+            
+[button, setting].forEach(el => {
+    el.addEventListener("click", function(e) {
+        e.preventDefault();
+        overlay.style.display = "none";
+    });
+});
+
+
+
 document.addEventListener("DOMContentLoaded", function () {
   const faqItems = document.querySelectorAll(".montessori-tarjeta");
 
   faqItems.forEach(item => {
     const question = item.querySelector(".pregunta");
     const answer = item.querySelector(".respuesta");
-    const icon = item.querySelector(".icono");
 
     question.addEventListener("click", function () {
       const isOpen = answer.classList.contains("open");
@@ -27,9 +40,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
 const form = document.getElementById('form-container');
 const boton = document.getElementById('boton');
+const texto = document.getElementById('Texto-socio');
 
 function HandleSendEmail(event) {
-  event.preventDefault();
+  event.preventDefault(); 
 
   // Recoger los valores de los campos
   const inputName = document.getElementById('nombre').value;
@@ -90,21 +104,20 @@ function HandleSendEmail(event) {
     { value: inputDisponibilidadFinde, name: "Disponibilidad fines de semana" },
     { value: inputMetodopago, name: "Método de pago" }
   ];
-
   for (let i = 0; i < requiredFields.length; i++) {
-    if (!requiredFields[i].value.trim()) {
+    if (!requiredFields[i].value.trim()) { 
       alert(`El campo ${requiredFields[i].name} es requerido.`);
       return;
     }
   }
 
   // Enviar el mensaje al backend
-  fetch('http://localhost:3000/contacto', {
-    method: 'POST',
+  fetch('http://localhost:3000/contacto', { //Cambiar el localhost por la url del servidor donde
+    method: 'POST',                        // este alojado el servidor 
     headers: {
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify ({ 
+    body: JSON.stringify ({
       message: messageBody,// Enviar el mensaje al backend
       //emailUser: inputEmail
     })
@@ -129,11 +142,19 @@ function HandleSendEmail(event) {
   boton.innerHTML = 'Enviando...';
   boton.style.backgroundColor = '#ccc'; // Cambia el color del botón a gris
   boton.style.cursor = 'not-allowed'; // Cambia el cursor a no permitido
+  texto.innerHTML = 'Enviando...'; // Cambia el texto del botón a "Enviando..."
+  texto.classList.add('enviando'); // Añade una clase para cambiar el estilo del texto
+  form.style.display = 'none'; // Oculta el formulario
+  form.reset(); // Resetea el formulario
   setTimeout(() => {
     boton.disabled = false;
     boton.innerHTML = 'Enviar';
     boton.style.backgroundColor = ''; // Restaura el color original del botón
     boton.style.cursor = 'pointer'; // Restaura el cursor original
+    texto.innerHTML = '';
+    texto.classList.remove('enviando'); 
+    form.style.display = ''; 
+
   }, 2000);
 }
 

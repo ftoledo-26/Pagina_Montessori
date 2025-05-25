@@ -657,6 +657,14 @@ hr {
     transition: background-color 0.3s ease, transform 0.2s;
     margin-left: 12%;
 }
+.enviando{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    font-size: 3rem;
+    color: #0173d3;
+}
 .arquia-banca {
     border: solid 1px #0173d3;
     background-color: #ffffff;
@@ -787,7 +795,12 @@ hr {
     .personas-descripcion {
         max-width: 100%;
     }
+    .personas-imagen img {
+        width: 100%;
+        max-width: 150px;
+    }
 }
+
 
 /*
 *

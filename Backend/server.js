@@ -4,6 +4,20 @@ const dotenv = require('dotenv');
 const cors = require('cors'); 
 const bodyParser = require('body-parser');  
 const rateLimit = require('express-rate-limit'); 
+const cookie = require('cookie-parser');
+
+
+
+const cookiesMiddleware = require('./cookies/cookiesMiddleware');
+
+
+
+
+
+
+
+
+
 
 // Configuración del entorno (para cargar las variables de entorno)
 dotenv.config();
@@ -34,7 +48,7 @@ app.post('/contacto', async (req, res) => {
 
   // Configuración del servicio de correo (Nodemailer)
   const transporter = nodemailer.createTransport({
-    service: 'gmail',  // Si usas Gmail
+    service: 'gmail',  // Si usas Gmail, si no pon el que usas
     auth: {
       user: process.env.EMAIL_FROM,  // Debes tener esta variable en tu archivo .env
       pass: process.env.EMAIL_PASS   // También esta

@@ -1,0 +1,88 @@
+/* Fondo bloqueador (overlay) */
+.cookie-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  padding: 20px; /* espaciado para móviles */
+  box-sizing: border-box;
+}
+
+@keyframes girar {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Aplicar animación */
+.rotate {
+  animation: girar 3s linear infinite;
+}
+
+/* Caja de cookies */
+.cookies-box {
+  background-color: white;
+  padding: 25px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  box-sizing: border-box;
+}
+
+.cookies-box img {
+  width: 60px;
+  margin-bottom: 15px;
+}
+
+.cookies-box h3 {
+  margin: 10px 0;
+  font-size: 18px;
+}
+
+.cookies-box p {
+  font-size: 14px;
+  margin-bottom: 20px;
+  line-height: 1.4;
+}
+
+.cookies-box a {
+  display: inline-block;
+  margin: 5px;
+  padding: 10px 15px;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.cookies-box .accept {
+  background-color: #4caf50;
+  color: white;
+}
+
+.cookies-box .setting {
+  background-color: #ccc;
+  color: #000;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  cursor: pointer;
+  font-size: 24px;
+  color: #888;
+}
