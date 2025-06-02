@@ -1,20 +1,25 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const button =document.getElementById("acceptCookies");
-    const setting = document.querySelector(".setting");
-    const overlay = document.getElementById("cookieOverlay");
+  const button = document.getElementById("acceptCookies");
+  const setting = document.querySelector(".setting");
+  const overlay = document.getElementById("cookieOverlay");
 
-                
-    [button, setting].forEach(el => {
-        if (el) {
-            el.addEventListener("click", function(e) {
-                e.preventDefault();
-                if (overlay) {
-                    overlay.style.display = "none";
-                    
-                }
-            });
+
+  if (localStorage.getItem("cookiesAccepted") === "true" && overlay) {
+    overlay.remove();
+    return;
+  }
+
+  [button, setting].forEach(el => {
+    if (el) {
+      el.addEventListener("click", function (e) {
+        e.preventDefault();
+        localStorage.setItem("cookiesAccepted", "true");
+        if (overlay) {
+          overlay.remove();
         }
-    });
+      });
+    }
+  });
 });
 
 
@@ -147,17 +152,17 @@ function HandleSendEmail(event) {
 
   boton.disabled = true;
   boton.innerHTML = 'Enviando...';
-  boton.style.backgroundColor = '#ccc'; // Cambia el color del botón a gris
-  boton.style.cursor = 'not-allowed'; // Cambia el cursor a no permitido
-  texto.innerHTML = 'Enviando...'; // Cambia el texto del botón a "Enviando..."
-  texto.classList.add('enviando'); // Añade una clase para cambiar el estilo del texto
-  form.style.display = 'none'; // Oculta el formulario
-  form.reset(); // Resetea el formulario
+  boton.style.backgroundColor = '#ccc'; 
+  boton.style.cursor = 'not-allowed';
+  texto.innerHTML = 'Enviando...'; 
+  texto.classList.add('enviando');
+  form.style.display = 'none';
+  form.reset(); 
   setTimeout(() => {
     boton.disabled = false;
     boton.innerHTML = 'Enviar';
-    boton.style.backgroundColor = ''; // Restaura el color original del botón
-    boton.style.cursor = 'pointer'; // Restaura el cursor original
+    boton.style.backgroundColor = '';
+    boton.style.cursor = 'pointer';
     texto.innerHTML = '';
     texto.classList.remove('enviando'); 
     form.style.display = ''; 

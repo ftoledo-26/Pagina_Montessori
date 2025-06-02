@@ -23,7 +23,7 @@ app.use(express.json());
 
 
 const Limit = rateLimit({
-  windowMs: 1 * 60 * 1000, // 1 minuto
+  windowMs: 1 * 60 * 1000, // 60000 MILISEGUNDOS = 1 MINUTO
   max: 3,
   message: 'Demasiadas solicitudes, por favor intenta de nuevo más tarde.' 
 })
